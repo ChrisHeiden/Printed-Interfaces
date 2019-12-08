@@ -7,6 +7,8 @@
 \usepackage{cite}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage[hang,flushmargin]{footmisc} 
+
 
 \begin{document}
     \pagenumbering{gobble}
@@ -53,9 +55,12 @@
 
     \section{Class Process}
     \begin{flushleft}
-        To teach the class the major concepts of circuits and to create one with a microcontroller \footnote{\label{foot:microcontroller}Dies ist jetzt eine Fußnote.}, the 
-        teacher taught the basic principles of Ohm's law, how the current flows and how to program a microcontroller.
-        This has been done in the first 4 sessions.\newline
+        To teach the class the major concepts of circuits and to create one with a microcontroller {\footnote{\label{foot:
+        microcontroller} Microcontrollers are extremly small computers that became possible due to the progress of modern 
+        micro-technologies. The point is that such microcontrollers can be extended by a wide range of sensors that can 
+        be used as input or output devices that can be used to influence the real world around it. \cite{Schief1997, 
+        Dembowski2014}}}, the teacher taught the basic principles of Ohm's law, how the current flows and how to program 
+        a microcontroller. This has been done in the first 4 sessions.\newline
         In the first session, the teacher spoke about the current flow and Ohm's law. Therefore, he showed the students
         a virtual circuit that he could change in real-time.\newline
         In the second session, he talked about microcontrollers and how these devices can be used. He spent short
@@ -240,11 +245,11 @@
     \section{Outcome}
         \begin{flushleft}
 
-            The code can be found on GitHub: 
+            The code can be found on GitHub: https://github.com/ChrisHeiden/Printed-Interfaces/tree/master/documentation %TODO: Add right webpage
         \end{flushleft}
         
     \newpage
-    \bibliography{assignment_3} 
+    \bibliography{sources} 
     \bibliographystyle{ieeetr}
 
     \newpage
