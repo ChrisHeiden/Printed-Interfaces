@@ -1,4 +1,4 @@
-*.aux
+/documenation/doc.aux
 *.fdb_latexmk
 *.fls
 *.log
@@ -6,4 +6,3 @@
 *.synctex.gz
 *.toc
 *.toc
-
