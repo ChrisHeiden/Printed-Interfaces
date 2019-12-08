@@ -1,5 +1,5 @@
-/documenation/doc.aux
-*.fdb_latexmk
+/documentation/doc.aux
+/documentation/doc.fdb_latexmk
 *.fls
 *.log
 *doc.pdf
