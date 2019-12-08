@@ -1,8 +1,8 @@
-/documentation/doc.aux
-/documentation/doc.fdb_latexmk
-*.fls
-*.log
-*doc.pdf
-*.synctex.gz
-*.toc
-*.toc
+/documentation/*.aux
+/documentation/*.fdb_latexmk
+/documentation/*.fls
+/documentation/*.log
+/documentation/doc.pdf
+/documentation/*.synctex.gz
+/documentation/*.toc
+/documentation/*.toc
