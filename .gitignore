@@ -1,3 +1,5 @@
+/documentation/*.bbl
+/documentation/*.blg
 /documentation/*.aux
 /documentation/*.fdb_latexmk
 /documentation/*.fls
