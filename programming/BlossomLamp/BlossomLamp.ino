@@ -12,11 +12,7 @@ BlossomLeave leave6(6, false);
 BlossomLeave leaves[] = {leave1, leave2, leave3, leave4, leave5, leave6};
 int leavesSize;
 
-RGBLight light1(1,2,3);
-RGBLight light2(1,2,3);
-RGBLight light3(1,2,3);
-RGBLight light4(1,2,3);
-RGBLight lights[] = {light1, light2, light3, light4};
+RGBLight light(1);
 
 void setup() {
 }
@@ -28,90 +24,57 @@ void loop() {
 }
 
 void defineSixColor( int leavesSize){
-  for(int i = 0; i < leavesSize; i++)
-  {
-    lights[i].up(255,255,255);
-  }
+  light.up(255,255,255);
 }
 
 void defineFiveColor( int pos1, int pos2, int pos3, int pos4, int pos5){
   if(pos1 == 0 && pos2 == 1 && pos3 == 2 && pos4 == 3 && pos5 == 4)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(109, 147, 95);
-    }	
+    light.up(109, 147, 95);
   }
   
   if(pos1 == 0 && pos2 == 1 && pos3 == 2 && pos4 == 3 && pos5 == 5)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(160, 147, 95);
-    }	
+    light.up(160, 147, 95);
   }
 }
 
 void defineFourColor( int pos1, int pos2, int pos3, int pos4){
   if(pos1 == 0 && pos2 == 1 && pos3 == 2 && pos4 == 3)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(137, 183, 55);
-    }	
+    light.up(137, 183, 55);	
   }
   if(pos1 == 0 && pos2 == 1 && pos3 == 2 && pos4 == 4) 
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(128, 128, 64);
-    }
+    light.up(128, 128, 64);  
   }
   if(pos1 == 0 && pos2 == 1 && pos3 == 2 && pos4 == 5) 
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(191, 128, 64);
-    }
+    light.up(191, 128, 64);
   }
 }
 
 void defineThreeColor( int pos1, int pos2, int pos3){
   if(pos1 == 0 && pos2 == 1 && pos3 == 2)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(170,170,0);
-    }
+    light.up(170,170,0);
   }
   if(pos1 == 0 && pos2 == 1 && pos3 == 3)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(182,160,74);
-    }
+    light.up(182,160,74);
   }
   if(pos1 == 0 && pos2 == 1 && pos3 == 4)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(170, 85, 85);
-    }
+    light.up(170, 85, 85);
   }
   if(pos1 == 0 && pos2 == 1 && pos3 == 5)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(255, 85, 85);
-    } 
+    light.up(255, 85, 85);
   }
   
   if(pos1 == 1 && pos2 == 2 && pos3 == 3)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(97, 245, 74);
-    } 
+    light.up(97, 245, 74);
   }
   if(pos1 == 1 && pos2 == 2 && pos3 == 4)
   {
@@ -119,25 +82,16 @@ void defineThreeColor( int pos1, int pos2, int pos3){
   }
   if(pos1 == 1 && pos2 == 2 && pos3 == 5)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(85, 170, 85);
-    }    
+    light.up(85, 170, 85);
   }
 
   if(pos1 == 2 && pos2 == 3 && pos3 == 4)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(12, 160, 159);
-    }
+    light.up(12, 160, 159);
   }
   if(pos1 == 2 && pos2 == 3 && pos3 == 5)
    {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(97, 160, 159);
-    }
+    light.up(97, 160, 159);
   }
 }
 
@@ -145,161 +99,98 @@ void defineThreeColor( int pos1, int pos2, int pos3){
 void defineTwoColor( int pos1, int pos2){
   if(pos1 == 0 && pos2 == 1)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(255,128,0);
-    }
+    light.up(255,128,0);
   }
 
   if(pos1 == 0 && pos2 == 2)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(128,128,0);
-    }
+    light.up(128,128,0);
   }
   if(pos1 == 0 && pos2 == 3)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(146,112,111); 
-    }
-    
+    light.up(146,112,111);  
   }
   if(pos1 == 0 && pos2 == 4)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(128,0,128); 
-    }  
+    light.up(128,0,128);  
   }
   if(pos1 == 0 && pos2 == 5)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(255,0,128); 
-    }     
+    light.up(255,0,128);     
   }
   
   if(pos1 == 1 && pos2 == 2)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(128,255,0);
-    }   
+    light.up(128,255,0);  
   }
   if(pos1 == 1 && pos2 == 3)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(146,240,111);
-    }    
+    light.up(146,240,111);
+   
   }
   if(pos1 == 1 && pos2 == 4)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(128,128,128);
-    }  
+    light.up(128,128,128); 
   }
   if(pos1 == 1 && pos2 == 5)
-   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(255,128,128);
-    }   
+  {
+    light.up(255,128,128);  
   }
 
   
   if(pos1 == 2 && pos2 == 3)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(19,240,111);
-    } 
+    light.up(19,240,111);
   }
   if(pos1 == 2 && pos2 == 4)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(0,128,128);
-    }
+    light.up(0,128,128);
   }
   if(pos1 == 2 && pos2 == 5)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(128,128,128);
-    }
+    light.up(128,128,128);
   }
 
   
   if(pos1 == 3 && pos2 == 4)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(19,112,238);
-    }
+    light.up(19,112,238);
   }
   if(pos1 == 3 && pos2 == 5)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(146,112,238);
-    }
+    light.up(146,112,238);
   }
-
-
+  
   if(pos1 == 4 && pos2 == 5)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(128,0,255);
-    }
+    light.up(128,0,255);
   }
 }
 
 void defineOneColor(int pos){
-  if(pos == 0){
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(255,0,0);
-    }
+  if(pos == 0)
+  {
+    light.up(255,0,0);
   }
   if(pos == 1)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(255,255,0);
-    }
+    light.up(255,255,0);
   }
   if(pos == 2)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(0,255,0);
-    }
+    light.up(0,255,0);
   }
   if(pos == 3)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(37,224,221);
-    }
+    light.up(37,224,221);
   }
   if(pos == 4)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(0,0,255);
-    }
+    light.up(0,0,255);
   }
   if(pos == 5)
   {
-    for(int i = 0; i < leavesSize; i++)
-    {
-      lights[i].up(255,0,255);
-    }
+    light.up(255,0,255);
   }
 }
 
@@ -380,14 +271,14 @@ void defineBrightness(){
   if(brightnesValue == 1) {
     for(int i = 0; i < leavesSize; ++i)
     {
-      lights[i].changeBrightness(1);
+      light.changeBrightness(1);
     }
   }
   else if(brightnesValue == -1) 
   {
     for(int i = 0; i < leavesSize; ++i)
     {
-      lights[i].changeBrightness(-1);
+      light.changeBrightness(-1);
     }  
   }
 }
