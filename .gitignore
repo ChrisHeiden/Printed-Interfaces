@@ -4,7 +4,7 @@
 /documentation/*.fdb_latexmk
 /documentation/*.fls
 /documentation/*.log
-/documentation/doc.pdf
+/documentation/*.pdf
 /documentation/*.synctex.gz
 /documentation/*.toc
 /documentation/*.toc
