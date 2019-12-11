@@ -74,7 +74,6 @@
                 \caption{Shows a three-dimensional base model of the blossom lamp idea.}
                 \label{fig:blossomBaseModel}
             \end{figure}
-
         \end{flushleft}
 
     \subsection{Building Process}
@@ -86,11 +85,11 @@
 
         \begin{figure}[H]
             \centering
-            \includegraphics[scale=0.1]{images/process/base.jpg}
+            \includegraphics[scale=0.05]{images/process/base.jpg}
             \caption{Shows the base that has been milled.}
             \label{fig:blossomBase}
         \end{figure}
-
+        \noindent
         After milling the base, we had to experiment with the lase cuter and how big the holes and the distance between them 
         should be, so we can laser cut the blossom shape later. To laser cut everything, we used Illustator\cite{illustrator} and a laser cutter. 
         With Illustator we can design the shape that has to be cut. Therfore, we tried a width of 1mm, 0.75mm and 0.5mm and a distance
@@ -113,7 +112,7 @@
             \caption{Shows ring design.}
             \label{fig:laserCutTests}
         \end{figure}
-
+        \noindent
         Afterwards, we could laser cut the blossom ~\ref{fig:laserCutTests}. The blossoms broke, and so we needed
         to change the digital data and cut everything again. We also decided to work with wood because it is more flexible 
         than acrylic glas. 
@@ -143,10 +142,32 @@
             as an microcontroller, some resistors (10k\si{\ohm}), copper foil and an rgb-strip. \newline
             The resistors and the copper foil are used to build an capacitive sensor. \cite{Badger2019} 
             This means, they can detect finger touching and it will be used to create a analog slider.
-            The rgb-strip will be used to make the lamp shine in different colors. \cite{Burgess2019} \newline
+            The rgb-strip will be used to make the lamp shine in different colors. \cite{Burgess2019} 
+            \newline 
+            \noindent
             To program these functionalities, we programmed an Arduino program that can deal with these input 
             and output. The final code can be found on GitHub. %TODO: Add right webpage
         \end{flushleft}
+
+        % has to be changed later
+        \begin{figure}[h!]
+            \centering
+            \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[width=.8\linewidth]{images/process/solderingProcess.jpg}
+            \caption{Shows the soldering process of the project to test the functionality.}
+            \label{fig:test_shapes}
+            \end{subfigure}%
+            \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[width=.8\linewidth]{images/process/sensorLinks.png}
+            \caption{Shows the links between the microcontroller and the leds and copper foil that is 
+            used as a capacitive sensor. This image has been done by Frizing. \cite{fritzing}}
+            \label{fig:ringdesign2}
+            \end{subfigure}
+            \caption{Shows the soldering process and linking.}
+            \label{fig:laserCutTests}
+        \end{figure}
 
     \subsection{Merging Code and Physical Components}
         \begin{flushleft}
