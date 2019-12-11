@@ -7,7 +7,7 @@
 #include <avr/power.h>
 #endif
 
-#define PIXELNUMBER 6
+#define PIXELNUMBER 1
 
 class RGBLight{
 

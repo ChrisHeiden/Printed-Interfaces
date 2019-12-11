@@ -1,28 +1,34 @@
 #include "Slider.h"
 #include "RGBLight.h"
-#include "BlossomLeave.h"
+//#include "BlossomLeave.h"
+
+
 Slider slider;
 
-BlossomLeave leave1(1, true);
-BlossomLeave leave2(2, true);
-BlossomLeave leave3(3, true);
-BlossomLeave leave4(4, false);
-BlossomLeave leave5(5, false);
-BlossomLeave leave6(6, false);
-BlossomLeave leaves[] = {leave1, leave2, leave3, leave4, leave5, leave6};
+//BlossomLeave leave1(1, true);
+//BlossomLeave leave2(2, true);
+//BlossomLeave leave3(3, true);
+//BlossomLeave leave4(4, false);
+//BlossomLeave leave5(5, false);
+//BlossomLeave leave6(6, false);
+//BlossomLeave leaves[] = {leave1, leave2, leave3, leave4, leave5, leave6};
 int leavesSize;
 
-RGBLight light(1);
+RGBLight light(2);
 
 void setup() {
+  //leavesSize = sizeof(leaves) / sizeof(int);
+  Serial.begin(9600);
 }
 
 void loop() {
-  defineBrightness();
-  defineLampColor();
-  leavesSize = sizeof(leaves) / sizeof(int);
-}
+  slider.push(); // doesn't work
+  //light.up(160, 147, 95); // works
 
+  //defineBrightness();
+  //defineLampColor();
+}
+/*
 void defineSixColor( int leavesSize){
   light.up(255,255,255);
 }
@@ -94,7 +100,6 @@ void defineThreeColor( int pos1, int pos2, int pos3){
     light.up(97, 160, 159);
   }
 }
-
 
 void defineTwoColor( int pos1, int pos2){
   if(pos1 == 0 && pos2 == 1)
@@ -266,8 +271,8 @@ void defineLampColor(){
 
 void defineBrightness(){
   slider.push();
-
   short brightnesValue = slider.getBrightness();
+
   if(brightnesValue == 1) {
     for(int i = 0; i < leavesSize; ++i)
     {
@@ -282,3 +287,4 @@ void defineBrightness(){
     }  
   }
 }
+*/

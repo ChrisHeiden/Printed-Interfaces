@@ -1,7 +1,7 @@
 #include"Slider.h"
 
 Slider::Slider(){
-  
+  _brightness = 0;
 }
 
 short Slider::getBrightness(){
@@ -10,6 +10,8 @@ short Slider::getBrightness(){
 
 void Slider::push(){
   long sensorValue;
+  Serial.println(_cap1.capacitiveSensor(SENSITIVITY));
+/*
   for(int i = 0; i < maxCapacitive; ++i){
     _capValue[i] = _capArray[i].capacitiveSensor(sensitivity);    
   } 
@@ -26,4 +28,5 @@ void Slider::push(){
       _brightness = 0;
     }
   } 
+*/
 }
