@@ -1,6 +1,6 @@
 \documentclass[doc.tex]{subfiles}
 \begin{document}
-    \section{Project Process}
+    \section{Project Development}
     \subsection{Ideas}
     \subsubsection{Color-changing Bracelet}
     \begin{flushleft}
@@ -50,7 +50,7 @@
         \label{fig:blossomLamp}
     \end{figure}
 
-    \subsection{Detailed Idea}
+    \subsection{Detailed Explaination of the Idea}
         \begin{flushleft}
             At the end, we dicided to develop the third idea (see chapter \ref{BlossomShapedLamp}). That's why, we want to explain 
             how it should work in detail. \newline
@@ -84,7 +84,7 @@
             The result of the milling process can be seen in Figure ~\ref{fig:blossomBase}.
         \end{flushleft}
 
-        \begin{figure}[h!]
+        \begin{figure}[H]
             \centering
             \includegraphics[scale=0.1]{images/process/base.jpg}
             \caption{Shows the base that has been milled.}
@@ -96,7 +96,7 @@
         With Illustator we can design the shape that has to be cut. Therfore, we tried a width of 1mm, 0.75mm and 0.5mm and a distance
         of 1mm, 0.75mm, 0.5mm. The result can be found in Figure ~\ref{fig:laserCutTests}.
 
-        \begin{figure}[ht!]
+        \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
               \centering
@@ -114,62 +114,54 @@
             \label{fig:laserCutTests}
         \end{figure}
 
-        Afterwards, we could laser cut the blossom.
+        Afterwards, we could laser cut the blossom ~\ref{fig:laserCutTests}. The blossoms broke, and so we needed
+        to change the digital data and cut everything again. We also decided to work with wood because it is more flexible 
+        than acrylic glas. 
         
         % has to be changed later
-        \begin{figure}[ht!]
+        \begin{figure}[h!]
             \centering
             \begin{subfigure}{.5\textwidth}
               \centering
-              \includegraphics[width=.8\linewidth]{images/process/test_shapes.PNG}
-              \caption{Shows the laser cutted tests.}
+              \includegraphics[width=.8\linewidth]{images/process/first_try_dig.png}
+              \caption{Shows an image of the digital version of the blossom shape we wanted to cut.}
               \label{fig:test_shapes}
             \end{subfigure}%
             \begin{subfigure}{.5\textwidth}
               \centering
-              \includegraphics[width=.8\linewidth]{images/process/laserCutTests.jpg}
-              \caption{Shows the laser cutted tests.}
+              \includegraphics[width=.8\linewidth]{images/process/first_try_cut.jpg}
+              \caption{Shows an image of the cutted version.}
               \label{fig:ringdesign2}
             \end{subfigure}
             \caption{Shows ring design.}
             \label{fig:laserCutTests}
         \end{figure}
 
-    \subsection{Implementation}
+    \subsection{Implementation Process}
         \begin{flushleft}
-        dwadwad
+            After cutting everything we soldered everything. Therefore, we used an Arduino Pro Mini \cite{arduinoProMini} 
+            as an microcontroller, some resistors (10k\si{\ohm}), copper foil and an rgb-strip. \newline
+            The resistors and the copper foil are used to build an capacitive sensor. \cite{Badger2019} 
+            This means, they can detect finger touching and it will be used to create a analog slider.
+            The rgb-strip will be used to make the lamp shine in different colors. \cite{Burgess2019} \newline
+            To program these functionalities, we programmed an Arduino program that can deal with these input 
+            and output. The final code can be found on GitHub. %TODO: Add right webpage
         \end{flushleft}
 
-    \subsubsection{Coding the LED strip}
+    \subsection{Merging Code and Physical Components}
         \begin{flushleft}
-        dwadwa
+            After coding everything and testing the code if everything is working like we wanted, we glued
+            the blossom and the base together and connected the copper foil to the base. The result can be 
+            seen in Figure ~\ref{fig:finalPrototyp}.
         \end{flushleft}
 
-    \subsubsection{Coding the slider}
-        \begin{flushleft}
-        das ist ein test text (see Table ~\ref{tab:test}).\newline
-        \end{flushleft}
-
-        \begin{table}[h]
+        \begin{table}[h!]
             \centering
-            \begin{tabular}[h]{ccc}
-                & Code &  \\
-                & Show Code &  \\
+            \begin{tabular}{c}
+              \centering
+              \includegraphics[width=.8\linewidth]{images/process/first_try_cut.jpg}
             \end{tabular}
-            \caption{Shows the con}
-            \label{tab:test}
+            \caption{Shows the final prototyp of the blossom shaped lamp}
+            \label{fig:finalPrototyp}
         \end{table}
-        \begin{flushleft}
-        \end{flushleft}
-
-
-    \subsubsection{Merging code and physical components}
-        \begin{flushleft}
-        \end{flushleft}
-
-    \section{Outcome}
-        \begin{flushleft}
-
-            The code can be found on GitHub: https://github.com/ChrisHeiden/Printed-Interfaces/tree/master/documentation %TODO: Add right webpage
-        \end{flushleft}
 \end{document}
