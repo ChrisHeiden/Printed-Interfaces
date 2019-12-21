@@ -8,12 +8,12 @@ class Slider{
   public:
     Slider();
     void push();
-    short getBrightness();
+    int getBrightness();
     
   private:
-    short _brightness;
+    int _brightness;
 
-    CapacitiveSensor _cap1  = CapacitiveSensor(6,7);
+    CapacitiveSensor _cap1 = CapacitiveSensor(4,3); // 1M resistor between pins 2 & 4, pin 4 is sensor pin, add a wire and or foil
     /*CapacitiveSensor _cap2  = CapacitiveSensor(3, 2);
     CapacitiveSensor _cap3  = CapacitiveSensor(3, 2);
     CapacitiveSensor _cap4  = CapacitiveSensor(3, 2);

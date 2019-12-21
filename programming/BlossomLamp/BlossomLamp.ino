@@ -22,8 +22,10 @@ void setup() {
 }
 
 void loop() {
-  slider.push(); // doesn't work
-  //light.up(160, 147, 95); // works
+  slider.push(); 
+  light.up(160, 147, 95);
+  Serial.println(slider.getBrightness());
+  light.changeBrightness(slider.getBrightness());
 
   //defineBrightness();
   //defineLampColor();

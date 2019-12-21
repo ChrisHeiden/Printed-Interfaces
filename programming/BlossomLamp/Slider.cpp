@@ -2,15 +2,18 @@
 
 Slider::Slider(){
   _brightness = 0;
+  _cap1.set_CS_AutocaL_Millis(0xFFFFFFFF);  //Calibrate the sensor... 
+
 }
 
-short Slider::getBrightness(){
+int Slider::getBrightness(){
   return _brightness;
 }
 
 void Slider::push(){
   long sensorValue;
-  Serial.println(_cap1.capacitiveSensor(SENSITIVITY));
+  int _brightness =  _cap1.capacitiveSensor(30);
+
 /*
   for(int i = 0; i < maxCapacitive; ++i){
     _capValue[i] = _capArray[i].capacitiveSensor(sensitivity);    
