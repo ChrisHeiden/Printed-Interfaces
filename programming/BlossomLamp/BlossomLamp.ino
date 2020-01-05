@@ -1,276 +1,73 @@
-#include "Slider.h"
-#include "RGBLight.h"
-//#include "BlossomLeave.h"
+//#include "Slider.h"
+//#include "RGBLight.h"
+#include "BlossomLeaveCouple.h"
 
+//Slider slider;
 
-Slider slider;
+BlossomLeaveCouple leave1(10, 13);
+//BlossomLeaveCouple leave2(3, 4);
+//BlossomLeaveCouple leave3(5, 6);
+//BlossomLeaveCouple leaves[] = {leave1, leave2, leave3};
 
-//BlossomLeave leave1(1, true);
-//BlossomLeave leave2(2, true);
-//BlossomLeave leave3(3, true);
-//BlossomLeave leave4(4, false);
-//BlossomLeave leave5(5, false);
-//BlossomLeave leave6(6, false);
-//BlossomLeave leaves[] = {leave1, leave2, leave3, leave4, leave5, leave6};
 int leavesSize;
+int connections;
 
-RGBLight light(2);
+//RGBLight light(2);
 
 void setup() {
   //leavesSize = sizeof(leaves) / sizeof(int);
+  connections = 0;
   Serial.begin(9600);
 }
 
 void loop() {
-  slider.push(); 
-  light.up(160, 147, 95);
-  Serial.println(slider.getBrightness());
-  light.changeBrightness(slider.getBrightness());
-
+  //Serial.println("Hallo");
+  //slider.push();  // works
+  //light.colorUp(160, 147, 95); // works
+  //Serial.println(slider.getBrightnessValue()); // works
+  //light.changeBrightness(slider.getBrightness()); // works
+  boolean conn = leave1.getConnection(); // works
+  if(conn == true)
+  {
+    Serial.println("conn");
+  }
+  else
+  {
+    Serial.println("na");  
+  }
   //defineBrightness();
   //defineLampColor();
 }
+
 /*
-void defineSixColor( int leavesSize){
-  light.up(255,255,255);
-}
-
-void defineFiveColor( int pos1, int pos2, int pos3, int pos4, int pos5){
-  if(pos1 == 0 && pos2 == 1 && pos3 == 2 && pos4 == 3 && pos5 == 4)
-  {
-    light.up(109, 147, 95);
-  }
-  
-  if(pos1 == 0 && pos2 == 1 && pos3 == 2 && pos4 == 3 && pos5 == 5)
-  {
-    light.up(160, 147, 95);
-  }
-}
-
-void defineFourColor( int pos1, int pos2, int pos3, int pos4){
-  if(pos1 == 0 && pos2 == 1 && pos3 == 2 && pos4 == 3)
-  {
-    light.up(137, 183, 55);	
-  }
-  if(pos1 == 0 && pos2 == 1 && pos3 == 2 && pos4 == 4) 
-  {
-    light.up(128, 128, 64);  
-  }
-  if(pos1 == 0 && pos2 == 1 && pos3 == 2 && pos4 == 5) 
-  {
-    light.up(191, 128, 64);
-  }
-}
-
-void defineThreeColor( int pos1, int pos2, int pos3){
-  if(pos1 == 0 && pos2 == 1 && pos3 == 2)
-  {
-    light.up(170,170,0);
-  }
-  if(pos1 == 0 && pos2 == 1 && pos3 == 3)
-  {
-    light.up(182,160,74);
-  }
-  if(pos1 == 0 && pos2 == 1 && pos3 == 4)
-  {
-    light.up(170, 85, 85);
-  }
-  if(pos1 == 0 && pos2 == 1 && pos3 == 5)
-  {
-    light.up(255, 85, 85);
-  }
-  
-  if(pos1 == 1 && pos2 == 2 && pos3 == 3)
-  {
-    light.up(97, 245, 74);
-  }
-  if(pos1 == 1 && pos2 == 2 && pos3 == 4)
-  {
-    
-  }
-  if(pos1 == 1 && pos2 == 2 && pos3 == 5)
-  {
-    light.up(85, 170, 85);
-  }
-
-  if(pos1 == 2 && pos2 == 3 && pos3 == 4)
-  {
-    light.up(12, 160, 159);
-  }
-  if(pos1 == 2 && pos2 == 3 && pos3 == 5)
-   {
-    light.up(97, 160, 159);
-  }
-}
-
-void defineTwoColor( int pos1, int pos2){
-  if(pos1 == 0 && pos2 == 1)
-  {
-    light.up(255,128,0);
-  }
-
-  if(pos1 == 0 && pos2 == 2)
-  {
-    light.up(128,128,0);
-  }
-  if(pos1 == 0 && pos2 == 3)
-  {
-    light.up(146,112,111);  
-  }
-  if(pos1 == 0 && pos2 == 4)
-  {
-    light.up(128,0,128);  
-  }
-  if(pos1 == 0 && pos2 == 5)
-  {
-    light.up(255,0,128);     
-  }
-  
-  if(pos1 == 1 && pos2 == 2)
-  {
-    light.up(128,255,0);  
-  }
-  if(pos1 == 1 && pos2 == 3)
-  {
-    light.up(146,240,111);
-   
-  }
-  if(pos1 == 1 && pos2 == 4)
-  {
-    light.up(128,128,128); 
-  }
-  if(pos1 == 1 && pos2 == 5)
-  {
-    light.up(255,128,128);  
-  }
-
-  
-  if(pos1 == 2 && pos2 == 3)
-  {
-    light.up(19,240,111);
-  }
-  if(pos1 == 2 && pos2 == 4)
-  {
-    light.up(0,128,128);
-  }
-  if(pos1 == 2 && pos2 == 5)
-  {
-    light.up(128,128,128);
-  }
-
-  
-  if(pos1 == 3 && pos2 == 4)
-  {
-    light.up(19,112,238);
-  }
-  if(pos1 == 3 && pos2 == 5)
-  {
-    light.up(146,112,238);
-  }
-  
-  if(pos1 == 4 && pos2 == 5)
-  {
-    light.up(128,0,255);
-  }
-}
-
-void defineOneColor(int pos){
-  if(pos == 0)
-  {
-    light.up(255,0,0);
-  }
-  if(pos == 1)
-  {
-    light.up(255,255,0);
-  }
-  if(pos == 2)
-  {
-    light.up(0,255,0);
-  }
-  if(pos == 3)
-  {
-    light.up(37,224,221);
-  }
-  if(pos == 4)
-  {
-    light.up(0,0,255);
-  }
-  if(pos == 5)
-  {
-    light.up(255,0,255);
-  }
-}
-
 void defineLampColor(){
-  for(int i = 0; i < leavesSize; i++)
+  connections = 0;
+  for(int i = 0; i < leavesSize; ++i)
   {
-      boolean connection[leavesSize];
-      short amountConnection = 0;
-      if(i < 3){ connection[i] = leaves[i].getConnection(); leaves[i].changePinMode(); }
-      if(i >= 3){ connection[i] = leaves[i].getConnection(); leaves[i].changePinMode(); }
-    
-      for(int i = 0; i < leavesSize; i++){
-        if(connection[leavesSize] == true){
-          amountConnection = amountConnection + 1;
-        }
-      }
-      if(amountConnection == 1){
-        for(int i = 0; i < leavesSize; i++)
-        {
-          if(connection[i] == true)
-          {
-            defineOneColor(i);
-          }
-        }
-      }
-      if(amountConnection == 2){
-        int pos1 = -1, pos2 = -1;
-        for(int i = 0; i < leavesSize; i++)
-        {
-          if(connection[i] == true && pos1 == -1) { pos1 = i; }
-          else if(connection[i] == true && pos2 == -1){ pos2 = i; }
-        }
-        defineTwoColor(pos1, pos2);
-      }
-      if(amountConnection == 3){
-        int pos1 = -1, pos2 = -1, pos3 = -1;
-        for(int i = 0; i < leavesSize; i++)
-        {
-          if(connection[i] == true && pos1 == -1) { pos1 = i; }
-          else if(connection[i] == true && pos2 == -1){ pos2 = i; }
-          else if(connection[i] == true && pos3 == -1){ pos3 = i; }
-        }
-        defineThreeColor(pos1, pos2, pos3);
-      }
-      if(amountConnection == 4){
-        int pos1 = -1, pos2 = -1, pos3 = -1, pos4 = -1;
-        for(int i = 0; i < leavesSize; i++)
-        {
-          if(connection[i] == true && pos1 == -1) { pos1 = i; }
-          else if(connection[i] == true && pos2 == -1){ pos2 = i; }
-          else if(connection[i] == true && pos3 == -1){ pos3 = i; }
-          else if(connection[i] == true && pos4 == -1){ pos4 = i; }
-        }
-        defineFourColor(pos1, pos2, pos3, pos3);
-      }
-      if(amountConnection == 5){
-        int pos1 = -1, pos2 = -1, pos3 = -1, pos4 = -1, pos5 = -1;
-        for(int i = 0; i < leavesSize; i++)
-        {
-          if(connection[i] == true && pos1 == -1) { pos1 = i; }
-          else if(connection[i] == true && pos2 == -1){ pos2 = i; }
-          else if(connection[i] == true && pos3 == -1){ pos3 = i; }
-          else if(connection[i] == true && pos4 == -1){ pos4 = i; }
-          else if(connection[i] == true && pos5 == -1){ pos5 = i; }
-        }
-        defineFiveColor(pos1, pos2,pos3, pos4,pos5);
-      }
-      if(amountConnection == 6){       
-        defineSixColor(leavesSize);
-      }
-  }
+    boolean coonection = leaves[i].getConnection();
+    if(coonection == true)
+    {
+      ++connections;
+    }
+ 
+    switch (connections) {
+      case 0:
+        Serial.println("0");
+        break;
+      case 1:
+        Serial.println("1");
+        break;
+      case 2:
+        Serial.println("2");
+        break;
+      case 3:   
+        Serial.println("3");     
+        break;
+    }
+  } 
 }
-
+*/
+/*
 void defineBrightness(){
   slider.push();
   short brightnesValue = slider.getBrightness();
