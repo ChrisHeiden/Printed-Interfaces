@@ -14,8 +14,12 @@ class RGBLight{
     public:
         RGBLight(int pin);
         void changeBrightness(int brightness);
-        void up(int r, int g, int b);
+        void colorUp(int r, int g, int b);
+        void up();
         void off();
+        void defineThirdColor();
+        void defineSecondColor();
+        void defineFirstColor();
 
     private:
         Adafruit_NeoPixel _pixels;
