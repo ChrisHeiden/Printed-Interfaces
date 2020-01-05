@@ -1,19 +1,29 @@
+#ifndef Slider_H
+#define Slider_H
+
 #include <CapacitiveSensor.h>
-#define maxCapacitive 16
+#define maxCapacitive 3
 #define SENSITIVITY 10000
-#define threshold 100
 
 class Slider{
 
   public:
     Slider();
     void push();
-    int getBrightness();
+    int getBrightnessValue();
     
   private:
     int _brightness;
 
-    CapacitiveSensor _cap1 = CapacitiveSensor(4,3); // 1M resistor between pins 2 & 4, pin 4 is sensor pin, add a wire and or foil
+    CapacitiveSensor _cap1 = CapacitiveSensor(6,5); 
+    CapacitiveSensor _cap2 = CapacitiveSensor(9,8);
+    CapacitiveSensor _cap3 = CapacitiveSensor(4,3); 
+    CapacitiveSensor _capArray[maxCapacitive] = {_cap1, _cap2, _cap3};
+    long _capValue[maxCapacitive];
+    unsigned long _time;
+    short _firstTouch;
+    short _secondTouch;
+
     /*CapacitiveSensor _cap2  = CapacitiveSensor(3, 2);
     CapacitiveSensor _cap3  = CapacitiveSensor(3, 2);
     CapacitiveSensor _cap4  = CapacitiveSensor(3, 2);
@@ -33,3 +43,5 @@ class Slider{
     CapacitiveSensor _capArray[maxCapacitive] = {_cap1, _cap2, _cap3, _cap4, _cap5, _cap6, _cap7, _cap8, _cap9, _cap10, _cap11, _cap12, _cap13, _cap14, _cap15, _cap16};
     long _capValue[maxCapacitive];*/
 };
+
+#endif
