@@ -7,12 +7,13 @@
 class BlossomLeaveCouple{
 
     public:
-        BlossomLeaveCouple(int pinLeaveA, int pinLeaveB);
+        BlossomLeaveCouple(int pinLeaveA, int pinLeaveB, int threshold);
         boolean getConnection();
        
     private:
        int _pinLeaveA;
        int _pinLeaveB;
+       int _threshold;
 };
 
 #endif
