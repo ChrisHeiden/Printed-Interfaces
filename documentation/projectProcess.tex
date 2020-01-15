@@ -147,7 +147,7 @@
             \hspace{1mm}
             \begin{subfigure}{.45\textwidth}
                 \centering
-                \includegraphics[width=0.8\linewidth]{images/process/05_LaserCut.jpg}
+                \includegraphics[width=0.3\linewidth]{images/process/05_LaserCut.jpg}
                 \caption{Shows the fifth try to laser cut the shape. This time we have been
                          working with MDR 1mm thin plate. They wholes are just lines. Nothines
                          broke and it is truely flexible.}
@@ -157,7 +157,7 @@
             \hspace{1mm}
             \begin{subfigure}{.45\textwidth}
                 \centering
-                \includegraphics[width=0.8\linewidth]{images/process/06_LaserCut.jpg}
+                \includegraphics[width=0.3\linewidth]{images/process/06_LaserCut.jpg}
                 \caption{Shows the sixth and last try to laser cut the shape. Everything is 
                 working now, so the wood is flexable and the blossoms leaves are long enough
                 to connect. }
@@ -169,17 +169,35 @@
         \end{figure}
         \noindent
 
+
+        In addition to this, we tested the conductive ink on the wood and if it is possible 
+        to get a connection between to leaves if they have conductive ink on it. The rult is
+        that it is possible to get a notification; However the resistens is very high, so we 
+        had to use an analog pin and a threshold to find out if a leave coupe is connected
+        (see \ref{fig:leaveConductiveInk}).
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[scale=0.05]{images/process/leaveTesting.jpg}
+            \caption{Shows the soldering process.}
+            \label{fig:leaveConductiveInk}
+        \end{figure}
+
+
     \subsection{Implementation Process}
         \begin{flushleft}
-            After cutting everything we soldered everything. Therefore, we used an Arduino Pro Mini \cite{arduinoProMini} 
-            as an microcontroller, some resistors (10k\si{\ohm}), copper foil and an rgb-strip. \newline
+            After getting to know the material and how everything can be laser cutted, we had to 
+            solder everything together. Therefore, we used an Arduino Pro Mini \cite{arduinoProMini} 
+            as an microcontroller, some resistors (like 10k\si{\ohm} resistors), copper foil and an Neopixel WS2812. \newline
             The resistors and the copper foil are used to build an capacitive sensor. \cite{Badger2019} 
             This means, they can detect finger touching and it will be used to create a analog slider.
-            The rgb-strip will be used to make the lamp shine in different colors. \cite{Burgess2019} 
+            The Neopixel WS2812 will be used to make the lamp shine in different colors. \cite{Burgess2019} 
             \newline 
             \noindent
-            To program these functionalities, we programmed an Arduino program that can deal with these input 
-            and output. The final code can be found on GitHub. %TODO: Add right webpage
+            To become close to the initial idea, we drilled three more whole inside the base and 
+            pulled the Neopixel WS2812 inside. Sure, before we soldered kabels on them, so we can 
+            test them before soldering everything together. After testing the Pixels, we soldered 
+            them on the microcontroller (see \ref{fig:solderingProcess}).
         \end{flushleft}
 
         \begin{figure}[H]
@@ -187,9 +205,24 @@
             \begin{subfigure}{.45\textwidth}
               \centering
               \includegraphics[width=0.8\linewidth]{images/process/solderingProcess.jpg}
-              \caption{Shows the soldering process of the project to test the functionality.}
+              \caption{Shows a testing soldering.}
               \label{fig:01_LaserCut}
               \vspace{6mm}
+            \end{subfigure}
+            \begin{subfigure}{.45\textwidth}
+                \centering
+                \includegraphics[scale=0.03]{images/process/Soldering_Process_1.jpg}
+                \caption{Shows the soldering process from the top.}
+                \label{fig:solderingProcess_1}
+                \vspace{6mm}
+            \end{subfigure}
+            \hspace{1mm}
+            \begin{subfigure}{.45\textwidth}
+                \centering
+                \includegraphics[scale=0.03]{images/process/Soldering_Process_2.jpg}
+                \caption{Shows the soldering process from the botton.}
+                \label{fig:solderingProcess_2}
+                \vspace{6mm}
             \end{subfigure}
             \begin{subfigure}{.45\textwidth}
                 \centering
@@ -202,6 +235,21 @@
             \caption{Shows the soldering process and linking.}
             \label{fig:laserCutTests}
         \end{figure}
+
+        \noindent
+        To program these functionalities, we programmed an Arduino program that can deal with these inputs 
+        and outputs. The final code can be found on GitHub. %TODO: Add right webpage
+
+        
+        \begin{figure}[H]
+            \centering
+            
+            %\hfill
+            
+            \caption{Shows the soldering process.}
+            \label{fig:solderingProcess}
+        \end{figure}
+        \noindent
 
     \subsection{Merging Code and Physical Components}
         \begin{flushleft}
