@@ -1,0 +1,296 @@
+\documentclass[doc.tex]{subfiles}
+\begin{document}
+    \section{Project Development}
+    \subsection{Ideas}
+    \subsubsection{Color-changing Bracelet}
+    \begin{flushleft}
+        Our first idea was to program and color-changing bracelet. This can change its color if someone of your
+        friends has such a bracelet too. These can create a network, so they can communicate with each other. The
+        network strength can be used to identify if the friend is close. Then it will change its color, so both know
+        that a friend is close to him or her. Also, groups can be defined. Every group has its own thread and if someone 
+        from a specific group is next to you the system can change the color of this specific thread. This would just 
+        be a proof of concept, so most of the programming would be static (see Figure ~\ref{fig:braceltIdea}).
+    \end{flushleft}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.4]{images/projectideas/bracelt.png}
+        \caption{Shows the bracelt concept.}
+        \label{fig:braceltIdea}
+    \end{figure}
+
+    \subsubsection{Music controll Jacket}
+    \begin{flushleft}
+        Another idea was to develop a jacket that can be used to change a song you are listening on a phone. Therefore,
+        strips are placed on the left or right arm that can be used to change the song to make it louder or to stop the song, 
+        for example (see Figure ~\ref{fig:jacketIdea}).
+    \end{flushleft}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.2]{images/projectideas/jacket.png}
+        \caption{Shows the concept of a jacket with interaction constraints.}
+        \label{fig:jacketIdea}
+    \end{figure}
+
+    %why is the new chapter before image? 
+    \subsubsection{Blossom shaped Lamp}
+    \label{BlossomShapedLamp}
+    \begin{flushleft}
+        A third and last idea is about lightness. The idea is to build a lamp of a blossom that can be modified by the user.
+        Every blossom leaf has a magnet inside, so it is possible to connect each leave. If some leaves are connected, the lamp that 
+        is in the middle of the flower blossom changes its color. Moreover, it is possible to rotate the whole lamp and to change the
+        brightness by an analog switch (see Figure ~\ref{fig:blossomLamp}).
+    \end{flushleft}
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.4]{images/projectideas/blossomLamp.png}
+        \caption{Shows the concept of a blossom shaped lamp.}
+        \label{fig:blossomLamp}
+    \end{figure}
+
+    \subsection{Detailed Explaination of the Idea}
+        \begin{flushleft}
+            In the end, we decided to develop the third idea (see chapter \ref{BlossomShapedLamp}). That's why we want to explain 
+            how it should work in detail. \newline
+            The base of the prototype will be milled, so we get a perfect shape of the the. Therefore, we will use Autodesk Fusion 360\cite{autodeskFusion360}
+            to model it. In the center of the base will be the blossom shaped lamp that can be opened. Around this, we want to have a 
+            circled shaped groud. There we want to place copper foil that is linked with a microcontroller, % add explaination
+            so the foil can be used as a slider. This interaction will change the brightness of the lamp. \newline
+            However, the major functionality is the lamp itself. Therefore, we want to laser cut the shape, so the users of the lamp can
+            take one or several blossoms to open it. This will change the color shining of the lamp. We want to use a transparent acrylic glass.
+            Therefore, we have to cut holes inside the glass, so the shape can change.  \newline
+            If all blossoms are connected, then the lamp doesn't shine at all. However, if the user opens the blossom, then the lamp gets on
+            and the color change. 
+            \newline
+            \newline
+            To develop such a device, we want to use an Arduino Pro Mini, copper foil and programmable WS2812B LEDs.
+            Furthermore, we want to use a CNC machine and cutters to build the case.
+        \end{flushleft}
+
+    \subsection{Building Process}
+        \begin{flushleft}
+            To build the prototype, we modeled the base for the lamp (see Figure ~\ref{fig:blossomBaseModel}). Therefore, we used
+            Autodesk. After doing so, we used a milling machine. We only had to convert the 3D model into a .iges file.
+            The result of the milling process can be seen in Figure ~\ref{fig:blossomBase}.
+        \end{flushleft}
+
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}{.45\textwidth}
+              \centering
+              \includegraphics[scale=0.15]{images/process/FlowerLamp.png}
+              \caption{Shows a three-dimensional base model of the blossom lamp idea.}
+              \label{fig:blossomBaseModel}
+              \vspace{6mm}
+            \end{subfigure}
+            %\hfill
+            \hspace{1mm}
+            \begin{subfigure}{.45\textwidth}
+                \centering
+                \includegraphics[scale=0.05]{images/process/base.jpg}
+                \caption{Shows the base that has been milled.}
+                \label{fig:blossomBase}
+                \vspace{6mm}
+            \end{subfigure}
+            %\hfill
+            \caption{Show the steps we had to do to drill the base in a CNC machine.}
+            \label{fig:laserCutTests}
+        \end{figure}
+
+
+        \noindent
+        After milling the base, we had to experiment with a lase cuter to find out how big the holes and the distance between them 
+        has to be, so that we can laser cut the blossom shape later. To laser cut everything, we used Illustator\cite{illustrator} 
+        and a laser cutter. With Illustator we can design the shape that has to be cut. Therefore, we tried different widths (1mm, 
+        0.75mm and 0.5mm) and distances (1mm, 0.75mm, 0.5mm). The result can be found in Figure ~\ref{fig:01_LaserCut}.\\
+        \noindent
+        After doing the first tried we decided to work with wood because it is more flexible 
+        than acrylic glas (see Figure ~\ref{fig:03_LaserCut} and ~\ref{fig:04_LaserCut}).
+
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}{.45\textwidth}
+              \centering
+              \includegraphics[width=0.8\linewidth]{images/process/01_LaserCut.jpg}
+              \caption{Shows the first try to laser cut in general, so we wanted to
+                       find out what distances of the wholes and how big the wholes 
+                       should be in general.}
+              \label{fig:01_LaserCut}
+              \vspace{6mm}
+            \end{subfigure}
+            %\hfill
+            \medskip
+            \hspace{1mm}
+            \begin{subfigure}{.45\textwidth}
+                \centering
+                \includegraphics[width=0.6\linewidth]{images/process/02_LaserCut.jpg}
+                \caption{Shows the second try to laser cut the shape. This time we have been
+                         working with acrylic glass that was 2mm thin. The wholes are 1mm thick 
+                         and the distance between those are only 5mm. When we tried to move
+                         the parts, they broke.}
+                \label{fig:02_LaserCut}
+                \vspace{6mm}
+            \end{subfigure}
+            %\hfill
+            \hspace{1mm}
+            \begin{subfigure}{.45\textwidth}
+                \centering
+                \includegraphics[width=0.6\linewidth]{images/process/03_LaserCut.jpg}
+                \caption{Shows the third try to laser cut the shape. This time we have been
+                         working with wood plate what is 3mm thin. The wholes are 1mm thick 
+                         and the distance between those are only 5mm. When we tried to move
+                         the parts, they broke.}
+                \label{fig:03_LaserCut}
+                \vspace{6mm}
+            \end{subfigure}
+            %\hfill
+            \hspace{1mm}
+            \begin{subfigure}{.45\textwidth}
+                \centering
+                \includegraphics[width=0.6\linewidth]{images/process/04_LaserCut.jpg}
+                \caption{Shows the fourth try to laser cut the shape. This time we have been
+                         working with MDR 1mm thin plate. The wholes are 0.5mm thick and the 
+                         distance between those are only 2.5mm, so they broke.}
+                \label{fig:04_LaserCut}
+                \vspace{6mm}
+            \end{subfigure}
+            \hspace{1mm}
+            \begin{subfigure}{.45\textwidth}
+                \centering
+                \includegraphics[width=0.6\linewidth]{images/process/05_LaserCut.jpg}
+                \caption{Shows the fifth try to laser cut the shape. This time we have been
+                         working with MDR 1mm thin plate. They wholes are just lines. Nothines
+                         broke and it is truely flexible.}
+                \label{fig:04_LaserCut}
+                \vspace{6mm}
+            \end{subfigure}
+            \hspace{1mm}
+            \begin{subfigure}{.45\textwidth}
+                \centering
+                \includegraphics[width=0.6\linewidth]{images/process/06_LaserCut.jpg}
+                \caption{Shows the sixth and last try to laser cut the shape. Everything is 
+                working now, so the wood is flexable and the blossoms leaves are long enough
+                to connect. }
+                \label{fig:04_LaserCut}
+                \vspace{6mm}
+            \end{subfigure}
+            \caption{Shows the process of laser cuttings.}
+            \label{fig:laserCutTests}
+        \end{figure}
+        
+        \noindent
+        In addition to this, we tested the conductive ink on the wood and if it is possible 
+        to get a connection between to leaves if they have conductive ink on it. The result is
+        that it is possible to get a notification; however, the resistance is very high, so we 
+        had to use an analog pin and a threshold to find out if a leave coupe is connected
+        (see \ref{fig:leaveConductiveInk}).
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[scale=0.05]{images/process/leaveTesting.jpg}
+            \caption{Shows the testing of the conductive ink with wooden leaves.}
+            \label{fig:leaveConductiveInk}
+        \end{figure}
+
+        \noindent
+        Furthermore, we used a vinyl cutter to cut our cupper foil in a round shape. This copper foil 
+        tags will be used as capacitive sensors. These will be used as sliders in the program, so the 
+        user can change the brightness of the LEDs (see Figure \ref{fig:vinylCuttingProp}).
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[scale=0.05]{images/process/vinylCuttingProp.jpg}
+            \caption{Shows the vinyl cutting result.}
+            \label{fig:vinylCuttingProp}
+        \end{figure}
+
+        \noindent
+        Afterward this test, we wanted to paint conductive ink on wood before laser cutting. Before,
+        we asked the company if there is something inside the paint that burns or is toxic. 
+        After knowing that it should be totally fine to use the paint and cut it at the same time as 
+        the wood, we did so (see Figure \ref{fig:leaveConductiveInk_laserCut}). 
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[scale=0.05]{images/process/leaveTesting.jpg}
+            \caption{teststetstetstestsettes}
+            \label{fig:leaveConductiveInk_laserCut}
+        \end{figure}
+
+
+    \subsection{Implementation Process}
+        \begin{flushleft}
+            After getting to know the material and how everything can be cut, we had to 
+            solder everything together. Therefore, we used an Arduino Pro Mini \cite{arduinoProMini} 
+            as a microcontroller, some resistors (like 10k\si{\ohm} resistors), copper foil and a Neopixel WS2812. \newline
+            The resistors and the copper foil are used to build a capacitive sensor. \cite{Badger2019} 
+            This means, they can detect finger touching and it will be used to create an analog slider.
+            The Neopixel WS2812 will be used to make the lamp shine in different colors. \cite{Burgess2019} 
+            \newline 
+            \noindent
+            To become close to the initial idea, we drilled three more whole inside the base and 
+            pulled the Neopixel WS2812 inside. Sure, before we soldered cables on them, so we can 
+            test them before soldering everything together. After testing the Pixels, we soldered 
+            them on the microcontroller (see \ref{fig:solderingProcess}).
+        \end{flushleft}
+
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}{.45\textwidth}
+              \centering
+              \includegraphics[width=0.8\linewidth]{images/process/solderingProcess.jpg}
+              \caption{Shows a testing soldering.}
+              \label{fig:solderingProcess_0}
+              \vspace{6mm}
+            \end{subfigure}
+            \begin{subfigure}{.45\textwidth}
+                \centering
+                \includegraphics[scale=0.03]{images/process/Soldering_Process_1.jpg}
+                \caption{Shows the soldering process from the top.}
+                \label{fig:solderingProcess_1}
+                \vspace{6mm}
+            \end{subfigure}
+            \hspace{1mm}
+            \begin{subfigure}{.45\textwidth}
+                \centering
+                \includegraphics[scale=0.03]{images/process/Soldering_Process_2.jpg}
+                \caption{Shows the soldering process from the botton.}
+                \label{fig:solderingProcess_2}
+                \vspace{6mm}
+            \end{subfigure}
+            \begin{subfigure}{.45\textwidth}
+                \centering
+                \includegraphics[width=0.8\linewidth]{images/process/sensorLinks.png}
+                \caption{Shows the links between the microcontroller and the LEDs and copper foil that is 
+                used as a capacitive sensor. This image has been done by Frizing. \cite{fritzing}}
+                \label{fig:solderingProcess_3}
+                \vspace{6mm}
+              \end{subfigure}
+            \caption{Shows the soldering process and linking.}
+            \label{fig:solderingProcess}
+        \end{figure}
+
+        \noindent
+        To program these functionalities, we programmed an Arduino program that can deal with these inputs 
+        and outputs. The final code can be found on GitHub. %TODO: Add right webpage
+
+    \subsection{Merging Code and Physical Components}
+        \begin{flushleft}
+            After coding everything and testing the code if everything is working as we wanted, we glued
+            the blossom and the base together and connected the copper foil to the base. Therefore, we had 
+            to drill some holes in the ground, so wires can be added. The final prototype of the be seen in 
+            Figure ~\ref{fig:finalPrototyp}.
+        \end{flushleft}
+
+        \begin{table}[h!]
+            \centering
+            \begin{tabular}{c}
+              \centering
+              \includegraphics[width=.8\linewidth]{images/process/01_LaserCut.jpg}
+            \end{tabular}
+            \caption{Shows the final prototyp of the blossom shaped lamp}
+            \label{fig:finalPrototyp}
+        \end{table}
+\end{document}
