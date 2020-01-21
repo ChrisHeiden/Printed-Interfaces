@@ -1,4 +1,4 @@
-\documentclass[doc.tex]{subfiles}
+\documentclass[00_doc.tex]{subfiles}
 \begin{document}
     \subsection{Building Process}
     \begin{flushleft}
@@ -138,14 +138,56 @@
     \end{figure}
 
     \noindent
-    Afterward the conductive test (see Figure \ref{fig:leaveConductiveInk}), we wanted to paint conductive ink on wood before laser cutting. Before,
-    we asked the company if there is something inside the paint that burns or is toxic. 
-    After knowing that it should be fine to use the paint and later cut it, we did so (see Figure \ref{fig:leaveConductiveInk_laserCut}). 
+    Afterward the conductive test (see Figure \ref{fig:leaveConductiveInk}), we wanted to paint 
+    conductive ink on wood before laser cutting. Before, we asked the company if there is 
+    something inside the paint that burns or is toxic. After knowing that it should be fine to 
+    use the paint and later cut it, we did so (see Figure \ref{fig:leaveConductiveInk_laserCut}). 
 
     \begin{figure}[h!]
         \centering
         \includegraphics[scale=0.05]{images/process/leaveConductiveInk_laserCut.jpg}
         \caption{Shows a test if conductive ink can be painted on wood before laser cutting it.}
         \label{fig:leaveConductiveInk_laserCut}
+    \end{figure}
+
+    \noindent
+    Afterwards, we had to drill holes inside the base, so we can link the conductive cupper foil 
+    with wires (see \ref{fig:conductiveCupperFoilWithWires}). In addition to this, we had to 
+    drill a larger hole inside the base. In this we want to attach the microcontroller and the 
+    battery (see \ref{fig:holesForMicrocontroller}). Furthermore, we drilled paths inside the 
+    base, so wires can go from every whole to the microcontroller. So, users should not see 
+    any wires outside of the whole installation (see \ref{fig:drillPath}).
+
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{images/process/01_LaserCut.jpg}
+        \caption{Shows the wholes for the cupper foil and their wires.}
+        \label{fig:conductiveCupperFoilWithWires}
+        \vspace{6mm}
+        \end{subfigure}
+        %\hfill
+        \medskip
+        \hspace{1mm}
+        \begin{subfigure}{.45\textwidth}
+            \centering
+            \includegraphics[width=0.6\linewidth]{images/process/02_LaserCut.jpg}
+            \caption{Shows the whole where the microcontroller will be attached to.}
+            \label{fig:holesForMicrocontroller}
+            \vspace{6mm}
+        \end{subfigure}
+        %\hfill
+        \hspace{1mm}
+        \begin{subfigure}{.45\textwidth}
+            \centering
+            \includegraphics[width=0.6\linewidth]{images/process/03_LaserCut.jpg}
+            \caption{Shows the paths that has been drilled inside of the base, so 
+            users won't see any wiresing.}
+            \label{fig:drillPath}
+            \vspace{6mm}
+        \end{subfigure}
+        \caption{Shows the drilling process for the final version of the lamp.}
+        \label{fig:laserCutTests}
     \end{figure}
 \end{document}
