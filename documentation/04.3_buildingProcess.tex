@@ -116,7 +116,7 @@
     to get a connection between to leaves if they have conductive ink on it. The result is
     that it is possible to get a notification; however, the resistance is very high, so we 
     had to use an analog pin and a threshold to find out if a leave coupe is connected
-    (see \ref{fig:leaveConductiveInk}).
+    (see Figure \ref{fig:leaveConductiveInk}).
 
     \begin{figure}[h!]
         \centering
@@ -126,9 +126,10 @@
     \end{figure}
 
     \noindent
-    Furthermore, we used a vinyl cutter to cut our cupper foil in a round shape. This copper foil 
-    tags will be used as capacitive sensors. These will be used as sliders in the program, so the 
-    user can change the brightness of the LEDs (see Figure \ref{fig:vinylCuttingProp}).
+    Furthermore, we used a vinyl cutter \cite{vinylCutter}  to cut our cupper foil in a 
+    round shape. This copper foil will be used as capacitive sensors. The software ... 
+    has been used to draw the circles digitally. These will be used as sliders in the 
+    program, so the user can change the brightness of the LEDs (see Figure \ref{fig:vinylCuttingProp}).
 
     \begin{figure}[h!]
         \centering
@@ -141,30 +142,41 @@
     Afterward the conductive test (see Figure \ref{fig:leaveConductiveInk}), we wanted to paint 
     conductive ink on wood before laser cutting. Before, we asked the company if there is 
     something inside the paint that burns or is toxic. After knowing that it should be fine to 
-    use the paint and later cut it, we did so (see Figure \ref{fig:leaveConductiveInk_laserCut}). 
+    use the paint and later cut it, we did so (see Figure \ref{fig:07_LaserCut}). 
 
     \begin{figure}[h!]
         \centering
-        \includegraphics[scale=0.05]{images/process/leaveConductiveInk_laserCut.jpg}
+        \includegraphics[scale=0.05]{images/process/07_LaserCut.jpg}
         \caption{Shows a test if conductive ink can be painted on wood before laser cutting it.}
-        \label{fig:leaveConductiveInk_laserCut}
+        \label{fig:07_LaserCut}
+    \end{figure}
+
+    After testing, we cutted the final leave shape of the lamp (see Figure \ref{fig:finalLaserCut}). Therefore, we had to do some changed 
+    in cutting pattern because the ink burns a bit stronger than the wood without it, so it burned 
+    parts of the leaves. That's why, we had to rise the distance between the cuttins.   
+
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[scale=0.05]{images/process/07_LaserCut.jpg}
+        \caption{Shows the final shape of the blossom. This includes the conductive ink, so the system can detect if leaves are connected.}
+        \label{fig:finalLaserCut}
     \end{figure}
 
     \noindent
     Afterwards, we had to drill holes inside the base, so we can link the conductive cupper foil 
-    with wires (see \ref{fig:conductiveCupperFoilWithWires}). In addition to this, we had to 
+    with wires (see Figure \ref{fig:capSensorHole}). In addition to this, we had to 
     drill a larger hole inside the base. In this we want to attach the microcontroller and the 
-    battery (see \ref{fig:holesForMicrocontroller}). Furthermore, we drilled paths inside the 
+    battery (see Figure \ref{fig:LEDHoles}). Furthermore, we drilled paths inside the 
     base, so wires can go from every whole to the microcontroller. So, users should not see 
-    any wires outside of the whole installation (see \ref{fig:drillPath}).
+    any wires outside of the whole installation (see Figure \ref{fig:wirePath}).
 
     \begin{figure}[H]
         \centering
         \begin{subfigure}{.45\textwidth}
         \centering
-        \includegraphics[width=0.8\linewidth]{images/process/01_LaserCut.jpg}
+        \includegraphics[width=0.6\linewidth]{images/process/capSensorHole.jpg}
         \caption{Shows the wholes for the cupper foil and their wires.}
-        \label{fig:conductiveCupperFoilWithWires}
+        \label{fig:capSensorHole}
         \vspace{6mm}
         \end{subfigure}
         %\hfill
@@ -172,22 +184,22 @@
         \hspace{1mm}
         \begin{subfigure}{.45\textwidth}
             \centering
-            \includegraphics[width=0.6\linewidth]{images/process/02_LaserCut.jpg}
-            \caption{Shows the whole where the microcontroller will be attached to.}
-            \label{fig:holesForMicrocontroller}
+            \includegraphics[width=0.6\linewidth]{images/process/LEDHoles.jpg}
+            \caption{Shows the LED holes that has been drilled for the wires.}
+            \label{fig:LEDHoles}
             \vspace{6mm}
         \end{subfigure}
         %\hfill
         \hspace{1mm}
         \begin{subfigure}{.45\textwidth}
             \centering
-            \includegraphics[width=0.6\linewidth]{images/process/03_LaserCut.jpg}
+            \includegraphics[width=0.6\linewidth]{images/process/wirePath.jpg}
             \caption{Shows the paths that has been drilled inside of the base, so 
             users won't see any wiresing.}
-            \label{fig:drillPath}
+            \label{fig:wirePath}
             \vspace{6mm}
         \end{subfigure}
         \caption{Shows the drilling process for the final version of the lamp.}
-        \label{fig:laserCutTests}
+        \label{fig:drillingProcess}
     \end{figure}
 \end{document}
