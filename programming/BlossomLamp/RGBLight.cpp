@@ -23,7 +23,8 @@ void RGBLight::up(){
 }
 
 void RGBLight::off(){
-    _pixels.clear();
+  _pixels.setPixelColor(0, 0, 0, 0);
+  _pixels.show();
 }
 
 void RGBLight::defineThirdColor(){

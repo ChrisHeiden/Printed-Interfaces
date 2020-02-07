@@ -11,12 +11,6 @@ BlossomLeaveCouple::BlossomLeaveCouple(int pinLeaveA, int pinLeaveB, int thresho
 
 boolean BlossomLeaveCouple::getConnection(){
    digitalWrite(_pinLeaveA, HIGH);
-   int con = analogRead(_pinLeaveB);
-   if(con >= _threshold)
-   {
-      return true;
-   }
-   else{
-      return false;
-   }
+   if(analogRead(_pinLeaveB) >= _threshold){ return true; }
+   else{ return false; }
 }

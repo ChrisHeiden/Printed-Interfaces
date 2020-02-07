@@ -14,36 +14,52 @@ int Slider::getBrightnessValue(){
   return _brightness;
 }
 
+void Slider::testCapSensors(){
+  Serial.print("[");
+  Serial.print(_cap1.capacitiveSensor(SENSITIVITY));
+  Serial.print(",");
+  Serial.print(_cap2.capacitiveSensor(SENSITIVITY));
+  Serial.print(",");
+  Serial.print(_cap3.capacitiveSensor(SENSITIVITY));
+  Serial.println("]");
+}
+
 void Slider::push(){
   long sensorValue;
+  _time = millis();
 
-  for(short i = 0; i < maxCapacitive; ++i){
+  for(short i = 0; i < maxCapacitive; ++i)
+  {
     sensorValue = _capArray[i].capacitiveSensor(SENSITIVITY);
-    if(sensorValue > _capValue[i] + 30 ||  sensorValue < _capValue[i] - 30){
-      if(_firstTouch == -1){
-        _firstTouch = i; 
-        _secondTouch = i; 
-        _time = millis();
-        break;
-      }
+    if(sensorValue > _capValue[i] + THRESHOLD ||  sensorValue < _capValue[i] - THRESHOLD)
+    {
+
+      if(_firstTouch == -1) { _firstTouch = i; }
+      else { _secondTouch = i; }
     }
   }
 
-  Serial.print(", ");
-
-  for(short i = 0; i < maxCapacitive; ++i){
-    sensorValue = _capArray[i].capacitiveSensor(SENSITIVITY);
-    if((sensorValue > _capValue[i] + 30 ||  sensorValue < _capValue[i] - 30) && i != _firstTouch && _secondTouch != -1){
-      _secondTouch = i; 
-      break;
+  if(_firstTouch != -1 && _secondTouch != -1 && _firstTouch > _secondTouch) {
+    if(_firstTouch == maxCapacitive - 1 && _secondTouch == 0)
+    {
+      _brightness = _brightness + BRIGHTNESSCHANGE;
     }
+    else{
+      _brightness = _brightness - BRIGHTNESSCHANGE;
+    }
+     _firstTouch = _secondTouch;
+     _secondTouch = -1; 
   }
-  
-  if(_firstTouch > _secondTouch) {
-    _brightness = _brightness - 50;
-  }
-  else if(_firstTouch < _secondTouch) {
-    _brightness = _brightness + 50;
+  else if(_firstTouch != -1 && _secondTouch != -1 && _firstTouch < _secondTouch) {
+    if(_firstTouch == 0 && _secondTouch == maxCapacitive - 1)
+    {
+      _brightness = _brightness - BRIGHTNESSCHANGE;
+    }
+    else{
+      _brightness = _brightness + BRIGHTNESSCHANGE;
+    }
+      _firstTouch = _secondTouch;
+      _secondTouch = -1; 
   }
   
   if(_time + 1000 < millis())
