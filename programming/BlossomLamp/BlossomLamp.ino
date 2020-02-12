@@ -15,8 +15,9 @@
 #define LEAVE3_1 11
 #define LEAVE3_2 A2
 #define LEAVESIZE 3
+#define BRIGHTNESS 250
 
-Slider slider;
+Slider slider(BRIGHTNESS);
 
 BlossomLeaveCouple leave1(LEAVE1_1, LEAVE1_2, THRESHOLD);
 BlossomLeaveCouple leave2(LEAVE2_1, LEAVE2_2, THRESHOLD);
@@ -25,26 +26,39 @@ BlossomLeaveCouple leaves[LEAVESIZE] = {leave1, leave2, leave3};
 
 int connections;
 
-RGBLight light1(LIGHT1);
-RGBLight light2(LIGHT2);
-RGBLight light3(LIGHT3);
+RGBLight light1(LIGHT1,BRIGHTNESS);
+RGBLight light2(LIGHT2, BRIGHTNESS);
+RGBLight light3(LIGHT3, BRIGHTNESS);
 RGBLight lightArray[] = {light1, light2, light3};
+unsigned long timer;
 
 void setup() {
   Serial.begin(9600);
+  timer = millis();
 }
 
 void loop() {
-  //slider.testCapSensors(); 
-  slider.push(); 
-  Serial.println(slider.getBrightnessValue());
-
-  /*for(int i = 0; i < LEAVESIZE; ++i)
-  {
-    lightArray[i].changeBrightness(slider.getBrightnessValue());
-  }*/
-        
+  defineBrightness(); 
   //defineLampColor();
+}
+
+void defineBrightness(){
+  //slider.testCapSensors();
+  if(timer + 3000 <  millis()){
+    slider.setTouch(-1, -1);
+    timer = millis();
+    Serial.println("ahll");
+  }
+  slider.push(); 
+  int brightness = slider.getBrightnessValue();
+  Serial.println(brightness);
+  for(int i = 0; i < LEAVESIZE; ++i)
+  {
+    lightArray[i].changeBrightness(brightness);
+  }
+  Serial.println("");
+
+  delay(500);
 }
 
 void defineLampColor(){
@@ -59,8 +73,6 @@ void defineLampColor(){
       ++connections;
     }
   }
-
-    Serial.println(connections);
 
     switch (connections) {
       case 0:

@@ -1,7 +1,7 @@
 #include"Slider.h"
 
-Slider::Slider(){
-  _brightness = 250;
+Slider::Slider(int brightness){
+  _brightness = brightness;
   _firstTouch = -1;
   _secondTouch = -1;  
   for(int i = 0; i < maxCapacitive ;++i)
@@ -26,20 +26,19 @@ void Slider::testCapSensors(){
 
 void Slider::push(){
   long sensorValue;
-  _time = millis();
 
   for(short i = 0; i < maxCapacitive; ++i)
   {
     sensorValue = _capArray[i].capacitiveSensor(SENSITIVITY);
     if(sensorValue > _capValue[i] + THRESHOLD ||  sensorValue < _capValue[i] - THRESHOLD)
     {
-
+    
       if(_firstTouch == -1) { _firstTouch = i; }
-      else { _secondTouch = i; }
+      else if(_firstTouch != -1 && _firstTouch != i) { _secondTouch = i; }
     }
   }
-
-  if(_firstTouch != -1 && _secondTouch != -1 && _firstTouch > _secondTouch) {
+  
+  if(_firstTouch != -1 && _secondTouch != -1 && _firstTouch != _secondTouch && _firstTouch > _secondTouch) {
     if(_firstTouch == maxCapacitive - 1 && _secondTouch == 0)
     {
       _brightness = _brightness + BRIGHTNESSCHANGE;
@@ -61,10 +60,9 @@ void Slider::push(){
       _firstTouch = _secondTouch;
       _secondTouch = -1; 
   }
-  
-  if(_time + 1000 < millis())
-  {
+}
+
+void Slider::setTouch(int firstTouch, int secondTouch){
     _firstTouch = -1;
     _secondTouch = -1; 
-  }
 }

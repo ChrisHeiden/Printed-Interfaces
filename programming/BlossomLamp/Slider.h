@@ -4,18 +4,18 @@
 #include <CapacitiveSensor.h>
 #define maxCapacitive 3
 #define SENSITIVITY 10000
-#define THRESHOLD 30
-#define BRIGHTNESSCHANGE 50
+#define THRESHOLD 20
+#define BRIGHTNESSCHANGE 10
 
 class Slider{
 
   public:
-    Slider();
+    Slider(int brightness);
     void push();
     int getBrightnessValue();
     void testCapSensors();
+    void setTouch(int firstTouch, int secondTouch);
 
-    
   private:
     int _brightness;
     CapacitiveSensor _cap1 = CapacitiveSensor(6,5); 
@@ -24,7 +24,6 @@ class Slider{
     CapacitiveSensor _capArray[maxCapacitive] = {_cap1, _cap2, _cap3};
     
     long _capValue[maxCapacitive];
-    unsigned long _time;
     short _firstTouch;
     short _secondTouch;
  

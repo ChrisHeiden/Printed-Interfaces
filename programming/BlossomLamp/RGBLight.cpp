@@ -1,16 +1,16 @@
 #include "RGBLight.h"
  
-RGBLight::RGBLight(int pin){
+RGBLight::RGBLight(int pin, int brightness){
     _pin = pin;
-    _brightness = 0;
+    _brightness = brightness;
     _pixels = Adafruit_NeoPixel(PIXELNUMBER, _pin, NEO_GRB + NEO_KHZ800);
 
     _pixels.begin();
 }
 
 void RGBLight::changeBrightness(int brightness){
-    _brightness = _brightness + brightness;
-    _pixels.setBrightness(_brightness);
+  _brightness = brightness;
+  _pixels.setBrightness(_brightness);
 }
 
 void RGBLight::colorUp(int r, int g, int b){

@@ -12,7 +12,7 @@
 class RGBLight{
 
     public:
-        RGBLight(int pin);
+        RGBLight(int pin, int brightness);
         void changeBrightness(int brightness);
         void colorUp(int r, int g, int b);
         void up();
