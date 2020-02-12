@@ -39,7 +39,7 @@ void setup() {
 
 void loop() {
   defineBrightness(); 
-  //defineLampColor();
+  defineLampColor();
 }
 
 void defineBrightness(){
@@ -47,18 +47,15 @@ void defineBrightness(){
   if(timer + 3000 <  millis()){
     slider.setTouch(-1, -1);
     timer = millis();
-    Serial.println("ahll");
   }
+  
   slider.push(); 
   int brightness = slider.getBrightnessValue();
-  Serial.println(brightness);
+
   for(int i = 0; i < LEAVESIZE; ++i)
   {
     lightArray[i].changeBrightness(brightness);
   }
-  Serial.println("");
-
-  delay(500);
 }
 
 void defineLampColor(){
@@ -84,19 +81,19 @@ void defineLampColor(){
       case 1:
         for(int i = 0; i < LEAVESIZE; ++i)
         {
-          lightArray[i].colorUp(255,0,0); // works
+          lightArray[i].colorUp(255,0,0); 
         }
         break;
       case 2:
         for(int i = 0; i < LEAVESIZE; ++i)
         {
-          lightArray[i].colorUp(255,255,0); // works
+          lightArray[i].colorUp(255,255,0); 
         }
         break;
       case 3:
         for(int i = 0; i < LEAVESIZE; ++i)
         {
-          lightArray[i].colorUp(255,255,255); // works
+          lightArray[i].colorUp(255,255,255);
         }
         break;
     } 
