@@ -2,7 +2,7 @@
 #include "RGBLight.h"
 #include "BlossomLeaveCouple.h"
 
-#define THRESHOLD 800
+#define THRESHOLD 300
 
 #define LIGHT1 2
 #define LIGHT2 3
@@ -15,7 +15,7 @@
 #define LEAVE3_1 11
 #define LEAVE3_2 A2
 #define LEAVESIZE 3
-#define BRIGHTNESS 250
+#define BRIGHTNESS 100
 
 Slider slider(BRIGHTNESS);
 
@@ -26,7 +26,7 @@ BlossomLeaveCouple leaves[LEAVESIZE] = {leave1, leave2, leave3};
 
 int connections;
 
-RGBLight light1(LIGHT1,BRIGHTNESS);
+RGBLight light1(LIGHT1, BRIGHTNESS);
 RGBLight light2(LIGHT2, BRIGHTNESS);
 RGBLight light3(LIGHT3, BRIGHTNESS);
 RGBLight lightArray[] = {light1, light2, light3};
